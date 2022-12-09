@@ -1,0 +1,17 @@
+.button {
+   background-color: #6278f7;
+   border-radius: 10px;
+   font-weight: 700;
+   font-size: 18px;
+   padding: 32px;
+   border: none;
+   cursor: pointer;
+   color: #fff;
+   margin: 24px 0;
+   transition: 0.08s;
+}
+
+.button:hover {
+   background-color: #4862f6;
+   box-shadow: 10 0 0 #6278f7;
+}
