@@ -4,7 +4,7 @@ import DropDownList from "../DropDownList";
 import Button from "../Button";
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
 	const roles = ["Duelista", "Controlador", "Sentinela", "Iniciador"];
 
 	const [name, setName] = useState("");
@@ -14,7 +14,7 @@ const Form = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(name, agent, image, role);
+		props.onNewPlayer({ name, agent, image, role });
 	};
 
 	return (
