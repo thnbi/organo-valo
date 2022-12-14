@@ -1,7 +1,15 @@
-import Player from "../Player";
+import Player from '../Player'
 import "./style.css";
+import { IPlayers } from "../../shared/Interfaces/IPlayers";
 
-const Role = ({ role, primaryColor, secondaryColor, players }) => {
+interface RoleProps {
+	role: string,
+	primaryColor: string,
+	secondaryColor: string, 
+	players: IPlayers[]
+}
+
+const Role = ({ role, primaryColor, secondaryColor, players }: RoleProps) => {
 	return players.length > 0 ? (
 		<section className="role" style={{ backgroundColor: secondaryColor }}>
 			<h3 style={{ borderColor: primaryColor }}>{role}</h3>

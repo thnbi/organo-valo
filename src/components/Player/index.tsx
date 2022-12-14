@@ -1,6 +1,13 @@
 import './style.css'
 
-const Player = ({ name, img, role, bgColor}) => {
+interface PlayerProps {
+   name: string,
+   img?: string,
+   role: string,
+   bgColor: string
+}
+
+const Player = ({ name, img, role, bgColor}: PlayerProps) => {
    return (
       <div className='player'>
          <div className='cabecalho' style={{ backgroundColor: bgColor }}>
