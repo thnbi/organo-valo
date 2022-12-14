@@ -35,7 +35,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Banner />
+			<Banner srcImg="/img/banner.png" alt="Banner com o texto: Pessoas e times organizados em um só lugar!"/>
 			<Form
 				roles={roles.map((role) => role.name)}
 				onNewPlayer={(player) => {
