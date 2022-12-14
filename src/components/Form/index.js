@@ -44,7 +44,13 @@ const Form = (props) => {
 					label="Imagem"
 					placeholder="Adicione uma imagem"
 				/>
-				<DropDownList itens={props.roles} label="Função" onInput={(value) => setRole(value)} required={true} />
+
+				<DropDownList 
+				itens={props.roles}
+				required={true}
+				label="Função"
+				value={role} 
+				onInput={(value) => setRole(value)} />
 				<Button>Criar Card</Button>
 			</form>
 		</section>
