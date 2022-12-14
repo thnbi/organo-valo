@@ -2,6 +2,7 @@ import Banner from "./components/Banner";
 import Form from "./components/Form";
 import { useState } from "react";
 import Role from "./components/Role";
+import Footer from "./components/Footer";
 
 function App() {
 	const roles = [
@@ -50,6 +51,7 @@ function App() {
 					players={players.filter(player => player.role === role.name)}
 				/>
 			))}
+			<Footer />
 		</div>
 	);
 }
