@@ -5,7 +5,6 @@ import Button from "../Button";
 import { useState } from "react";
 
 const Form = (props) => {
-	const roles = ["Duelista", "Controlador", "Sentinela", "Iniciador"];
 
 	const [name, setName] = useState("");
 	const [agent, setAgent] = useState("");
@@ -15,6 +14,10 @@ const Form = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		props.onNewPlayer({ name, agent, image, role });
+		setName('');
+		setImage('');
+		setRole('');
+		setAgent('');
 	};
 
 	return (
@@ -41,7 +44,7 @@ const Form = (props) => {
 					label="Imagem"
 					placeholder="Adicione uma imagem"
 				/>
-				<DropDownList itens={roles} label="Função" onInput={(value) => setRole(value)} required={true} />
+				<DropDownList itens={props.roles} label="Função" onInput={(value) => setRole(value)} required={true} />
 				<Button>Criar Card</Button>
 			</form>
 		</section>
