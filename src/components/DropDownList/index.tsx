@@ -1,6 +1,14 @@
 import './style.css'
 
-const DropDownList = (props) => {
+interface DropDownListProps {
+   onInput: (value: string) => void,
+   required: boolean,
+   label: string,
+   value: string,
+   itens: string[]
+}
+
+const DropDownList = (props: DropDownListProps) => {
     return (
       <div className='drop-list'>
          <label>{props.label}</label>

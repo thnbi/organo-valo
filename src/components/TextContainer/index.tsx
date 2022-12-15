@@ -5,10 +5,10 @@ interface TextContainerProps {
 	placeholder: string;
 	label: string;
 	value: string;
-	required: boolean;
+	required?: boolean;
 }
 
-const TextContainer = ({label, onInput, placeholder, required, value}: TextContainerProps) => {
+const TextContainer = ({label, onInput, placeholder, value, required = false}: TextContainerProps) => {
 	const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
 		onInput(event.target.value);
 	};

@@ -1,5 +1,6 @@
 export interface IPlayers {
    name: string,
    role: string,
-   image?: string
+   image?: string,
+   agent?: string
 }

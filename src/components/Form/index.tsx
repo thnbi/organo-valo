@@ -3,21 +3,26 @@ import TextContainer from "../TextContainer";
 import DropDownList from "../DropDownList";
 import Button from "../Button";
 import { useState } from "react";
+import { IPlayers } from "../../shared/Interfaces/IPlayers";
 
-const Form = (props) => {
+interface FormProps {
+	onNewPlayer: (player: IPlayers) => void;
+	roles: string[];
+}
 
+const Form = (props: FormProps) => {
 	const [name, setName] = useState("");
 	const [agent, setAgent] = useState("");
 	const [image, setImage] = useState("");
 	const [role, setRole] = useState("");
 
-	const handleSubmit = (event) => {
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		props.onNewPlayer({ name, agent, image, role });
-		setName('');
-		setImage('');
-		setRole('');
-		setAgent('');
+		setName("");
+		setImage("");
+		setRole("");
+		setAgent("");
 	};
 
 	return (
@@ -45,12 +50,13 @@ const Form = (props) => {
 					placeholder="Adicione uma imagem"
 				/>
 
-				<DropDownList 
-				itens={props.roles}
-				required={true}
-				label="Função"
-				value={role} 
-				onInput={(value) => setRole(value)} />
+				<DropDownList
+					itens={props.roles}
+					required={true}
+					label="Função"
+					value={role}
+					onInput={(value) => setRole(value)}
+				/>
 				<Button>Criar Card</Button>
 			</form>
 		</section>
