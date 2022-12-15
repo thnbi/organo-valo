@@ -2,7 +2,8 @@ import Banner from "./components/Banner";
 import Form from "./components/Form";
 import { useState } from "react";
 import Role from "./components/Role";
-import Footer from "./components/Footer";
+import Footer from './components/Footer'
+import { IPlayers } from "./shared/Interfaces/IPlayers";
 
 function App() {
 	const roles = [
@@ -28,14 +29,17 @@ function App() {
 		},
 	];
 
-	const [players, setPlayer] = useState([]);
-	const newPlayer = (player) => {
+	const [players, setPlayer] = useState<IPlayers[]>([]);
+	const newPlayer = (player: IPlayers) => {
 		setPlayer([...players, player]);
 	};
 
 	return (
 		<div className="App">
-			<Banner srcImg="/img/banner.png" alt="Banner com o texto: Pessoas e times organizados em um só lugar!"/>
+			<Banner
+				srcImg="/img/banner.png"
+				alt="Banner com o texto: Pessoas e times organizados em um só lugar!"
+			/>
 			<Form
 				roles={roles.map((role) => role.name)}
 				onNewPlayer={(player) => {
@@ -48,7 +52,9 @@ function App() {
 					key={role.name}
 					primaryColor={role.primaryColor}
 					secondaryColor={role.secondaryColor}
-					players={players.filter(player => player.role === role.name)}
+					players={players.filter(
+						(player) => player.role === role.name
+					)}
 				/>
 			))}
 			<Footer />

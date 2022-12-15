@@ -26,7 +26,7 @@ const Role = ({ role, primaryColor, secondaryColor, players }: RoleProps) => {
 			</div>
 		</section>
 	) : (
-		""
+		<></>
 	);
 };
 
